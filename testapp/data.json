@@ -1,0 +1,122 @@
+{
+  "classes": [
+    {
+      "name": "1"
+    },
+    {
+      "name": "2"
+    },
+    {
+      "name": "3"
+    },
+    {
+      "name": "4"
+    },
+    {
+      "name": "5"
+    },
+    {
+      "name": "6"
+    },
+    {
+      "name": "7"
+    },
+    {
+      "name": "8"
+    },
+    {
+      "name": "9"
+    },
+    {
+      "name": "10"
+    },
+    {
+      "name": "11"
+    }
+  ],
+  "students": [
+    {
+      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко ", "user_class": "8"
+    },
+    {
+      "login": "test2", "password": "test23456", "name": "Пушкин Александр Сергеевич", "user_class": "5"
+    },
+    {
+      "login": "test3", "password": "test34567", "name": "Лермонтов Михаил Юрьевич", "user_class": "6"
+    },
+    {
+      "login": "test4", "password": "test456789111", "name": "Ломоносов Михаил Васильевич", "user_class": "8"
+    }
+  ],
+  "teachers": [
+    {
+      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко "
+    },
+    {
+      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко "
+    },
+    {
+      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко "
+    }
+  ],
+  "lessons": [
+    {
+      "name": " ", "is_active": " "
+    },
+    {
+      "name": " ", "is_active": " "
+    },
+    {
+      "name": " ", "is_active": " "
+    },
+    {
+      "name": " ", "is_active": " "
+    },
+    {
+      "name": " ", "is_active": " "
+    }
+  ],
+  "one_lesson": [
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    },
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    },
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    },
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    },
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    },
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    },
+    {
+      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+    }
+  ],
+  "grade": [
+    {
+      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+    },
+    {
+      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+    },
+    {
+      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+    },
+    {
+      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+    },
+    {
+      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+    },
+    {
+      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+    }
+  ]
+}
