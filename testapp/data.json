@@ -53,70 +53,55 @@
       "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко "
     },
     {
-      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко "
+      "login": "test2", "password": "test123456", "name": "Коротков Владимир Владимирович "
     },
     {
-      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко "
+      "login": "test3", "password": "test1234567", "name": "Остапенко Николай Васильевич "
     }
   ],
   "lessons": [
     {
-      "name": " ", "is_active": " "
+      "name": "История", "is_active": "1"
     },
     {
-      "name": " ", "is_active": " "
+      "name": "Математика", "is_active": "1"
     },
     {
-      "name": " ", "is_active": " "
+      "name": "Украинский язык ", "is_active": "1 "
     },
     {
-      "name": " ", "is_active": " "
+      "name": "Русский язык ", "is_active": "1 "
     },
     {
-      "name": " ", "is_active": " "
+      "name": "Английский язык ", "is_active": "1 "
     }
   ],
   "one_lesson": [
     {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+      "date_time": "23/10/2002 ", "lesson": "История ", "homework": "читать учебник ", "teacher": "Остапенко Николай Васильевич ", "a_class": "11 ", "lesson_status": "1 "
     },
     {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+      "date_time": "24/10/2002 ", "lesson": "Английский язык ", "homework": "читать учебник  ", "teacher": "Коротков Владимир Владимирович ", "a_class": "1 ", "lesson_status": "1 "
     },
     {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+      "date_time": "25/10/2020 ", "lesson": "Английский язык ", "homework": "читать учебник ", "teacher": "Коротков Владимир Владимирович ", "a_class": "2 ", "lesson_status": "1 "
     },
     {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
-    },
-    {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
-    },
-    {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
-    },
-    {
-      "date_time": " ", "lesson": " ", "homework": " ", "teacher": " ", "a_class": " ", "lesson_status": " "
+      "date_time": "26/10/2006 ", "lesson": "Английский язык ", "homework": "читать учебник ", "teacher": "Коротков Владимир Владимирович ", "a_class": "6 ", "lesson_status": "1 "
     }
   ],
   "grade": [
     {
-      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+      "student": "Пушкин Александр Сергеевич ", "lesson": "Английский язык ", "grade": "5 ", "grade_type": "1 "
     },
     {
-      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+      "student": "Пушкин Александр Сергеевич ", "lesson": "История ", "grade": "5 ", "grade_type": "2"
     },
     {
-      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+      "student": "Лермонтов Михаил Юрьевич ", "lesson": "Украинский язык ", "grade": "5 ", "grade_type": "3 "
     },
     {
-      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
-    },
-    {
-      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
-    },
-    {
-      "student": " ", "lesson": " ", "grade": " ", "grade_type": " "
+      "student": "Лермонтов Михаил Юрьевич ", "lesson": "Китайский язык ", "grade": "5 ", "grade_type": "4 "
     }
   ]
 }

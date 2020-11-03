@@ -32,6 +32,7 @@ class GradeType(models.IntegerChoices):
     lesson_work = 1
     test = 2
     control_test = 3
+    homework = 4
 
 
 class LessonStatus(models.IntegerChoices):
@@ -46,7 +47,7 @@ class OneLesson(models.Model):
     homework = models.CharField(max_length=500, blank=True)
     teacher = models.ForeignKey(Teachers, on_delete=models.PROTECT)
     a_class = models.ForeignKey(Classes, on_delete=models.PROTECT)
-    lesson_type = models.IntegerField(choices=LessonStatus.choices)
+    lesson_status = models.IntegerField(choices=LessonStatus.choices)
 
 
 class Grade(models.Model):
@@ -54,3 +55,4 @@ class Grade(models.Model):
     lesson = models.ForeignKey(OneLesson, on_delete=models.PROTECT)
     grade = models.IntegerField()
     grade_type = models.IntegerField(choices=GradeType.choices)
+
