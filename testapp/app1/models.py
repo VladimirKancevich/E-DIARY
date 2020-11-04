@@ -6,10 +6,13 @@ class Classes(models.Model):
 
 
 class Users(models.Model):
-    login = models.CharField(max_length=200)
-    password = models.CharField(max_length=200)
+    login = models.CharField('Логин', max_length=200)
+    password = models.CharField('Пароль', max_length=200)
     name = models.CharField(max_length=200)
     is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.login
 
     class Meta:
         abstract = True
@@ -55,4 +58,3 @@ class Grade(models.Model):
     lesson = models.ForeignKey(OneLesson, on_delete=models.PROTECT)
     grade = models.IntegerField()
     grade_type = models.IntegerField(choices=GradeType.choices)
-
