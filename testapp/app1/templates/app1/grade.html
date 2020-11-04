@@ -5,5 +5,10 @@
 {% block content %}
 
 <h4>Оценки</h4>
-
+{% for el in name %}
+    <div class=" name-output">
+        <h4>{{el.name}}</h4>
+        <h4>{{el.user_class}}</h4>
+    </div>
+{%endfor%}
 {% endblock %}
