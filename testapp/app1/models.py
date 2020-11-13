@@ -60,28 +60,32 @@ class Lessons(models.Model):
 
 
 class GradeType(models.IntegerChoices):
-    lesson_work = 1
-    test = 2
-    control_test = 3
-    homework = 4
+    lesson_work = 1, 'Работа на уроке'
+    test = 2, 'Самостоятельная работа'
+    control_test = 3, 'Контрольная работа'
+    homework = 4, 'Домашняя работа'
 
 
 class LessonStatus(models.IntegerChoices):
-    active = 1
-    canceled = 2
-    switched = 3
+    active = 1, 'Активный'
+    canceled = 2, 'Отменен'
+    switched = 3, 'Замена'
 
 
 class GradeList(models.IntegerChoices):
-    one = 1
-    two = 2
-    three = 3
-    four = 4
-    five = 5
+    one = 1, '1'
+    two = 2, '2'
+    three = 3, '3'
+    four = 4, '4'
+    five = 5, '5'
+
+
+class GradeList2(models.Model):
+    index = models.IntegerField()
 
 
 class OneLesson(models.Model):
-    #конкретный урок для расписания
+    # конкретный урок для расписания
     date_time = models.DateTimeField()
     lesson = models.ForeignKey(Lessons, on_delete=models.PROTECT)
     homework = models.CharField(max_length=500, blank=True)
@@ -98,11 +102,15 @@ class OneLesson(models.Model):
 
 
 class Grade(models.Model):
-    #оценка
+    # оценка
     student = models.ForeignKey(Students, on_delete=models.PROTECT)
     lesson = models.ForeignKey(OneLesson, on_delete=models.PROTECT)
     grade = models.IntegerField(choices=GradeList.choices)
+    grade2 = models.ForeignKey(GradeList2, on_delete=models.PROTECT)
     grade_type = models.IntegerField(choices=GradeType.choices)
+
+    def __int__(self):
+        return self.grade.GradeList.choices
 
     class Meta:
         verbose_name = 'Оценка'
