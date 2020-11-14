@@ -80,10 +80,6 @@ class GradeList(models.IntegerChoices):
     five = 5, '5'
 
 
-class GradeList2(models.Model):
-    index = models.IntegerField()
-
-
 class OneLesson(models.Model):
     # конкретный урок для расписания
     date_time = models.DateTimeField()
@@ -101,16 +97,28 @@ class OneLesson(models.Model):
         verbose_name_plural = 'Расписание уроков'
 
 
+def pain(grade_type):
+    if grade_type == 1:
+        return 'Работа на уроке'
+    elif grade_type == 2:
+        return 'Самостоятельная работа'
+    elif grade_type == 3:
+        return 'Контрольная работа'
+    elif grade_type == 4:
+        return 'Домашняя работа'
+    else:
+        return ' Ошибка '
+
+
 class Grade(models.Model):
     # оценка
     student = models.ForeignKey(Students, on_delete=models.PROTECT)
     lesson = models.ForeignKey(OneLesson, on_delete=models.PROTECT)
     grade = models.IntegerField(choices=GradeList.choices)
-    grade2 = models.ForeignKey(GradeList2, on_delete=models.PROTECT)
     grade_type = models.IntegerField(choices=GradeType.choices)
 
-    def __int__(self):
-        return self.grade.GradeList.choices
+    def __str__(self):
+        return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + pain(self.grade_type) + ' ' + str(self.lesson)
 
     class Meta:
         verbose_name = 'Оценка'
