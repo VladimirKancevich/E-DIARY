@@ -5,10 +5,17 @@
 {% block content %}
 
 <h4>Оценки</h4>
+<table class="table table-bordered">
 {% for el in name %}
     <div class=" name-output">
-        <h4>{{el.name}}</h4>
-        <h4>{{el.user_class}}</h4>
+
+
+        <tbody>
+        <tr>
+        <td>{{el.name}}</td>
+        <td>{{el.user_class}}</td>
+        </tr>
+        </tbody>
     </div>
 {%endfor%}
 {% endblock %}
