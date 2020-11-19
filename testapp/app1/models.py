@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 
 class Classes(models.Model):
@@ -97,7 +98,7 @@ class OneLesson(models.Model):
         verbose_name_plural = 'Расписание уроков'
 
 
-def pain(grade_type):
+def normviewfor(grade_type):
     if grade_type == 1:
         return 'Работа на уроке'
     elif grade_type == 2:
@@ -116,9 +117,12 @@ class Grade(models.Model):
     lesson = models.ForeignKey(OneLesson, on_delete=models.PROTECT)
     grade = models.IntegerField(choices=GradeList.choices)
     grade_type = models.IntegerField(choices=GradeType.choices)
+    # дата за которую ставится оценка
+    grade_date = models.DateField(default=date.today)
 
     def __str__(self):
-        return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + pain(self.grade_type) + ' ' + str(self.lesson)
+        return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + \
+               normviewfor(self.grade_type) + ' ' + str(self.lesson) + ' ' + 'Дата: ' + str(self.grade_date)
 
     class Meta:
         verbose_name = 'Оценка'
