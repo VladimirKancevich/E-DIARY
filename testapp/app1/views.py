@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-from app1.models import Students, Classes
+import datetime
+from app1.models import Students, Classes, Grade, Lessons, OneLesson
 
 
 def main(request):
@@ -12,5 +12,11 @@ def form(request):
 
 
 def student(request):
-    name = Students.objects.all()
-    return render(request, 'app1/grade.html', {'name': name})
+    name = Lessons.objects.all()
+    grade = Grade.objects.all()
+    return render(request, 'app1/grade.html', {'name': name, 'grade': grade})
+
+
+def frog(request):
+    date = datetime.datetime.now()
+    return render(request, 'app1/main.html', {'date': date})
