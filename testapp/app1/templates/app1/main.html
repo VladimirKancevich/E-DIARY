@@ -3,8 +3,6 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-<div id="current_date_time_block"></div>
-
 
 <div class="jumbotron text-center" >
   <div class="row">
@@ -14,55 +12,59 @@
 </div>
 
 <div class="container">
+  <div class="row">
+  <h4 class="col-sm-7">
+    <h4>Расписание <h4>
+    <div id="current_date_time_block"></div>
+<script type="text/javascript">
 
-  <h4>Расписание на  {{date}}</h4>
+    /* функция добавления ведущих нулей */
+    /* (если число меньше десяти, перед числом добавляем ноль) */
+    function zero_first_format(value)
+    {
+        if (value < 10)
+        {
+            value='0'+value;
+        }
+        return value;
+    }
+
+    /* функция получения текущей даты и времени */
+    function date_time()
+    {
+        var current_datetime = new Date();
+        var day = zero_first_format(current_datetime.getDate());
+        var month = zero_first_format(current_datetime.getMonth()+1);
+        var year = current_datetime.getFullYear();
+        var hours = zero_first_format(current_datetime.getHours());
+        var minutes = zero_first_format(current_datetime.getMinutes());
+        var seconds = zero_first_format(current_datetime.getSeconds());
+
+        return day+"."+month+"."+year+" "+hours+":"+minutes+":"+seconds;
+    }
+
+    /* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
+document.getElementById('current_date_time_block').innerHTML = date_time();
+</script></h4></h4>
 
 
     <table class="table table-bordered table-striped">
+      {% for el in lessons %}
+      <div class=" name-output">
+      <tr>
+        <td>{{el.lessons}}</td>
+      </tr>
+      </div>
+      {%endfor%}
+    </tbody>
+  </table>
+  </div>
+  <div class="col-sm-4">
 
-      <thead>
-      <tr>
-        <th>№</th>
-        <th>Предмет</th>
-        <th>Домашнее задание</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>1</td>
-        <td>Математика</td>
-        <td>№456, 457, 501</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Русский язык</td>
-        <td>упр.152, 153</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Английский язык</td>
-        <td>GB p.88, ex.188-201, SB p.72</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>История</td>
-        <td>стр.55-87, конспект, готовиться к кр</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Биология</td>
-        <td>стр.60-82, конспект</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Китайский язык</td>
-        <td>учить текст на стр.44</td>
-      </tr>
-      </tbody>
-    </table>
-    <div class="col-sm-4">
-
-    </div>
+  </div>
+  </div>
 </div>
 
+</body>
+</html>
 {% endblock %}
