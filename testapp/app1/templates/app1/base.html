@@ -21,17 +21,15 @@
       <a class="navbar-brand" href="#">E-DIARY</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="http://127.0.0.1:8000/">Главная</a></li>
-      <li><a href="#">Расписание</a></li>
-      <li><a href="#">Домашнее задание</a></li>
-      <li><a href="http://127.0.0.1:8000/grade">Оценки</a></li>
-      <li><a href="#">Успеваемость</a></li>
+      <li class="nav-item {% if url_name == 'main' %}active{% endif %}"><a class="nav-item " href="{% url 'app1:main'%}">Главная</a></li>
+      <li class="nav-item {% if url_name == 'timetable' %}active{% endif %}"><a class="nav-item " href="{% url 'app1:timetable'%}">Расписание</a></li>
+      <li class="nav-item {% if url_name == 'homework' %}active{% endif %}"><a class="nav-item " href="{% url 'app1:homework'%}">Домашнее задание</a></li>
+      <li class="nav-item {% if url_name == 'grade' %}active{% endif %}"><a class="nav-item " href="{% url 'app1:grade'%}">Оценки</a></li>
+      <li class="nav-item {% if url_name == 'progress_table' %}active{% endif %}"><a class="nav-item " href="{% url 'app1:progress_table'%}">Успеваемость</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://127.0.0.1:8000/form"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-cog"></span></a></li>
-    </ul>
+<!--    <ul class="nav navbar-nav navbar-right">-->
+<!--      <li class="nav-item {% if url_name == 'main' %}active{% endif %}"><a class="nav-item " href="#"><span class="glyphicon glyphicon-cog"></span></a></li>-->
+<!--    </ul>-->
   </div>
 </nav>
 
