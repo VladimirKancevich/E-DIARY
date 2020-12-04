@@ -81,9 +81,14 @@ class GradeList(models.IntegerChoices):
     five = 5, '5'
 
 
+class TimeSlot(models.Model):
+    time_begin = models.TimeField()
+    time_end = models.TimeField()
+
+
 class OneLesson(models.Model):
-    # конкретный урок для расписания
-    date_time = models.DateTimeField()
+    date = models.DateField()
+    lesson_time = models.ForeignKey(TimeSlot, on_delete=models.PROTECT)
     lesson = models.ForeignKey(Lessons, on_delete=models.PROTECT)
     homework = models.CharField(max_length=500, blank=True)
     teacher = models.ForeignKey(Teachers, on_delete=models.PROTECT)
@@ -98,7 +103,7 @@ class OneLesson(models.Model):
         verbose_name_plural = 'Расписание уроков'
 
 
-def normviewfor(grade_type):
+def norm_view_for(grade_type):
     if grade_type == 1:
         return 'Работа на уроке'
     elif grade_type == 2:
