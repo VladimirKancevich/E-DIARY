@@ -13,11 +13,11 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return render(request, 'app1/main.html',)
+                    return  render(request, 'app1/main.html',)
                 else:
                     return HttpResponse('Неактивный аккаунт')
             else:
-                return HttpResponse('неправильный логин или пароль')
+                return HttpResponse('неправильный логин или пароль') # дописать вывод сообщения
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})

@@ -1,9 +1,11 @@
 .jumbotron {
   background-color: #4682B4;
+  padding: 0px;
 }
 
 h2 {
   color:white
+  margin-top: 2px;
 }
 
 .active{
@@ -11,18 +13,15 @@ h2 {
 }
 
 body {
-
+  background: #336d9c;
 }
+
 
 .col-sm{
 }
 
-.navbar-brand{
-
-}
-
-.nav{
-
+.nav-link{
+    color:yellow;
 }
 
 .container-fluid{

@@ -8,11 +8,6 @@ def main(request):
     return render(request, 'app1/main.html', {'url_name': url_name})
 
 
-def form(request):
-    url_name = request.resolver_match.url_name
-    return render(request, 'app1/form.html', {'url_name': url_name})
-
-
 def homework(request):
     url_name = request.resolver_match.url_name
     return render(request, 'app1/homework.html', {'url_name': url_name})
@@ -39,3 +34,23 @@ def frog(request):
     url_name = request.resolver_match.url_name
     date = datetime.datetime.now()
     return render(request, 'app1/main.html', {'date': date, 'url_name': url_name})
+
+
+def authorization(request):
+    print(request.method)
+    if request.method == 'POST':
+        login = request.POST.get('login')
+        password = request.POST.get('password')
+        user = Students.objects.get(login=login, password=password)
+        if len(user) == 1:
+            if len(LogUser.objects.filter(user.id)) > 0:
+                return HttpResponse(status=400)
+            else:
+                key = LogUser(key=user)
+                key.save()
+                return render(request, 'app1/main.html',
+                              {'name': user.name, 'class': user.user_class, 'url_name': 'main'})
+        else:
+            return HttpResponse('Неправильное имя пользователя или пароль')
+    else:
+        return render(request, 'app1/form.html')

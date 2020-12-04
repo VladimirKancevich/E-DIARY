@@ -14,7 +14,7 @@ class Classes(models.Model):
 
 
 class Users(models.Model):
-    login = models.CharField('Логин', max_length=200)
+    login = models.CharField('Логин', unique=True, max_length=200)
     password = models.CharField('Пароль', max_length=200)
     name = models.CharField('ФИО', max_length=200)
     is_active = models.BooleanField('Работает/Учится', default=True)
@@ -125,10 +125,14 @@ class Grade(models.Model):
     # дата за которую ставится оценка
     grade_date = models.DateField(default=date.today)
 
-    def __str__(self):
-        return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + \
-               normviewfor(self.grade_type) + ' ' + str(self.lesson) + ' ' + 'Дата: ' + str(self.grade_date)
+    #def __str__(self):
+        #return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + \
+               #normviewfor(self.grade_type) + ' ' + str(self.lesson)
 
     class Meta:
         verbose_name = 'Оценка'
         verbose_name_plural = 'Оценки'
+
+
+class LogUser(models.Model):
+    key = models.ForeignKey(Students, on_delete=models.PROTECT)
