@@ -13,8 +13,8 @@
 
 <div class="container">
   <div class="row">
-  <h4 class="col-sm-7">
-    <h4>Расписание <h4>
+  <div class="col-sm-7">
+    <h4>Расписание </h4>
     <div id="current_date_time_block"></div>
 <script type="text/javascript">
 
@@ -40,12 +40,11 @@
         var minutes = zero_first_format(current_datetime.getMinutes());
         var seconds = zero_first_format(current_datetime.getSeconds());
 
-        return day+"."+month+"."+year+" "+hours+":"+minutes+":"+seconds;
+        return day+"."+month+"."+year;
     }
 
     /* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
 document.getElementById('current_date_time_block').innerHTML = date_time();
-</script></h4></h4>
 
 
     <table class="table table-bordered table-striped">

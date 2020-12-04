@@ -17,7 +17,8 @@ def user_login(request):
                 else:
                     return HttpResponse('Неактивный аккаунт')
             else:
-                return HttpResponse('неправильный логин или пароль')
+                return render(request, 'account/warhinglogin.html')
+                # return HttpResponse('неправильный логин или пароль')
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})
