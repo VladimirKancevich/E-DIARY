@@ -49,7 +49,7 @@ class Teachers(Users):
 
 
 class Lessons(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -108,6 +108,9 @@ class OneLesson(models.Model):
     class Meta:
         verbose_name = 'Расписание урока'
         verbose_name_plural = 'Расписание уроков'
+        constraints = [
+            models.UniqueConstraint(fields=['date', 'lesson_time', 'a_class'], name='unique_lesson')
+        ]
 
 
 def norm_view_for(grade_type):

@@ -37,12 +37,13 @@ def frog(request):
 
 
 def authorization(request):
-    print(request.method)
     if request.method == 'POST':
         login = request.POST.get('login')
         password = request.POST.get('password')
         user = Students.objects.get(login=login, password=password)
-        if len(user) == 1:
+        print(user, "это мой пользователь")
+        try:
+            user = Students.objects.get(login=login, password=password)
             if len(LogUser.objects.filter(user.id)) > 0:
                 return HttpResponse(status=400)
             else:
@@ -50,7 +51,7 @@ def authorization(request):
                 key.save()
                 return render(request, 'app1/main.html',
                               {'name': user.name, 'class': user.user_class, 'url_name': 'main'})
-        else:
-            return HttpResponse('Неправильное имя пользователя или пароль')
+        except user.DoesNotExist:
+            print("Неправильное имя пользователя или пароль")
     else:
         return render(request, 'app1/form.html')
