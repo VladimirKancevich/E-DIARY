@@ -36,13 +36,22 @@
   ],
   "teachers": [
     {
-      "login": "test1", "password": "test12345", "name": "Тарас Григорьевич Шевченко"
+      "login": "testu1", "password": "test12345", "name": "Тарас Григорьевич Шевченко"
     },
     {
-      "login": "test2", "password": "test123456", "name": "Коротков Владимир Владимирович"
+      "login": "testu2", "password": "test123456", "name": "Коротков Владимир Владимирович"
     },
     {
-      "login": "test3", "password": "test1234567", "name": "Остапенко Николай Васильевич"
+      "login": "testu3", "password": "test1234567", "name": "Остапенко Николай Васильевич"
+    },
+    {
+      "login": "testu4", "password": "test12345", "name": "Ильина Антонина Николаевна"
+    },
+    {
+      "login": "testu4", "password": "test123456", "name": "Синельников Борис Николаевич"
+    },
+    {
+      "login": "testu5", "password": "test1234567", "name": "Снарский Михаил Владимирович"
     }
   ],
   "lessons": [
@@ -60,6 +69,15 @@
     },
     {
       "name": "Английский язык", "is_active": "1"
+    },
+    {
+      "name": "Китайский языц", "is_active": "1"
+    },
+    {
+      "name": "Биология", "is_active": "1"
+    },
+    {
+      "name": "Химия", "is_active": "1"
     }
   ],
   "TimeSlot": [
@@ -86,6 +104,26 @@
     },
     {
       "time": "15:00-15:45"
+    }
+  ],
+  "students": [
+    {
+      "login": "test", "password": "test", "name": "Иванов Иван Иванович", "class": 4
+    },
+    {
+      "login": "test1", "password": "test", "name": "Васильев Василий Николаевич", "class": 4
+    },
+    {
+      "login": "test2", "password": "test", "name": "Мишин Алексей Владимироваич", "class": 4
+    },
+    {
+      "login": "test3", "password": "test", "name": "Яковлева Ева Михайловна", "class": 4
+    },
+    {
+      "login": "test4", "password": "test", "name": "Непроходов Кирилл Артемьевич", "class": 4
+    },
+    {
+      "login": "test5", "password": "test", "name": "Лаврентьев Виктор Борисович", "class": 4
     }
   ]
 }

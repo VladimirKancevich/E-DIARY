@@ -26,3 +26,7 @@ for time in data['TimeSlot']:
     time_end = datetime.time(int(hours), int(minutes))
     time_slot = TimeSlot(time_begin=time_begin, time_end=time_end)
     time_slot.save()
+
+for std in data['students']:
+    student = Students(login=std['login'], password=std['password'], name=std['name'], user_class=std['class'])
+    student.save()

@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.db import models
 import datetime
-from app1.models import Students, Classes, Grade, Lessons, OneLesson
+from app1.models import *
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def main(request):
@@ -27,6 +30,7 @@ def student(request):
     url_name = request.resolver_match.url_name
     name = Lessons.objects.all()
     grade = Grade.objects.all()
+    # user = Students.objects
     return render(request, 'app1/grade.html', {'name': name, 'grade': grade, 'url_name': url_name})
 
 
@@ -40,18 +44,15 @@ def authorization(request):
     if request.method == 'POST':
         login = request.POST.get('login')
         password = request.POST.get('password')
-        user = Students.objects.get(login=login, password=password)
-        print(user, "это мой пользователь")
         try:
             user = Students.objects.get(login=login, password=password)
-            if len(LogUser.objects.filter(user.id)) > 0:
-                return HttpResponse(status=400)
+            if len(LogUser.objects.filter(key=user)) > 0:
+                return redirect('')
             else:
                 key = LogUser(key=user)
                 key.save()
-                return render(request, 'app1/main.html',
-                              {'name': user.name, 'class': user.user_class, 'url_name': 'main'})
-        except user.DoesNotExist:
-            print("Неправильное имя пользователя или пароль")
+                return redirect('')
+        except ObjectDoesNotExist:
+            return HttpResponse(status=400)
     else:
         return render(request, 'app1/form.html')
