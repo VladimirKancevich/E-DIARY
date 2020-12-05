@@ -19,9 +19,9 @@
   <form method="POST" action="{% url 'app1:form' %}">
     {% csrf_token %}
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Login:</label>
+      <label class="control-label col-sm-2" for="login">Login:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+        <input type="text" class="form-control" id="login" placeholder="Enter login" name="login">
       </div>
     </div>
     <div class="form-group">

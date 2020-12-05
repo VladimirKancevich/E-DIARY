@@ -85,6 +85,13 @@ class TimeSlot(models.Model):
     time_begin = models.TimeField()
     time_end = models.TimeField()
 
+    def __str__(self):
+        return self.time_begin.isoformat(timespec='minutes') + "-" + self.time_end.isoformat(timespec='minutes')
+
+    class Meta:
+        verbose_name = 'Время урока'
+        verbose_name_plural = 'Время уроков'
+
 
 class OneLesson(models.Model):
     date = models.DateField()
@@ -125,9 +132,9 @@ class Grade(models.Model):
     # дата за которую ставится оценка
     grade_date = models.DateField(default=date.today)
 
-    #def __str__(self):
-        #return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + \
-               #normviewfor(self.grade_type) + ' ' + str(self.lesson)
+    def __str__(self):
+        return str(self.student) + ' Оценка: ' + str(self.grade) + ' ' + norm_view_for(self.grade_type) + ' ' + str(
+            self.lesson) + ' ' + str(self.grade_date)
 
     class Meta:
         verbose_name = 'Оценка'
