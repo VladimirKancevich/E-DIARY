@@ -7,6 +7,8 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 def main(request):
+    if len(LogUser.objects.all()) == 0:
+        return redirect('/form')
     url_name = request.resolver_match.url_name
     user = LogUser.objects.all()[0].key
     user_name = user.name
@@ -15,6 +17,8 @@ def main(request):
 
 
 def homework(request):
+    if len(LogUser.objects.all()) == 0:
+        return redirect('/form')
     url_name = request.resolver_match.url_name
     user = LogUser.objects.all()[0].key
     user_name = user.name
@@ -23,6 +27,8 @@ def homework(request):
 
 
 def timetable(request):
+    if len(LogUser.objects.all()) == 0:
+        return redirect('/form')
     url_name = request.resolver_match.url_name
     user = LogUser.objects.all()[0].key
     user_name = user.name
@@ -31,6 +37,8 @@ def timetable(request):
 
 
 def progress_table(request):
+    if len(LogUser.objects.all()) == 0:
+        return redirect('/form')
     url_name = request.resolver_match.url_name
     user = LogUser.objects.all()[0].key
     user_name = user.name
@@ -39,6 +47,8 @@ def progress_table(request):
 
 
 def student(request):
+    if len(LogUser.objects.all()) == 0:
+        return redirect('/form')
     url_name = request.resolver_match.url_name
     name = Lessons.objects.all()
     grade = Grade.objects.all()
@@ -55,6 +65,10 @@ def authorization(request):
         try:
             user = Students.objects.get(login=login, password=password)
             if len(LogUser.objects.filter(key=user)) > 0:
+                key = LogUser.objects.all()[0]
+                key.delete()
+                key = LogUser(key=user)
+                key.save()
                 return redirect('/')
             else:
                 key = LogUser(key=user)
@@ -67,5 +81,6 @@ def authorization(request):
 
 
 def quit(request):
-    LogUser.objects.all().delete()
+    user = LogUser.objects.all()[0]
+    user.delete()
     return render(request, 'app1/form.html')
