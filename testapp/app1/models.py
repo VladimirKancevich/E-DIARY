@@ -82,8 +82,8 @@ class GradeList(models.IntegerChoices):
 
 
 class TimeSlot(models.Model):
-    time_begin = models.TimeField()
-    time_end = models.TimeField()
+    time_begin = models.TimeField(unique=True)
+    time_end = models.TimeField(unique=True)
 
     def __str__(self):
         return self.time_begin.isoformat(timespec='minutes') + "-" + self.time_end.isoformat(timespec='minutes')

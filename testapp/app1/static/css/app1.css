@@ -3,7 +3,11 @@
   padding: 0px;
 }
 
-h2 {
+.date_time{
+    font-size: large;
+}
+
+h2{
   color:white
   margin-top: 2px;
 }
