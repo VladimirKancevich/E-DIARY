@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-  <h4 class="col-sm-7">Расписание </h4>
+  <h4 class="col-sm-7">Расписание на сегодня.</h4>
     <div class="date_time" id="current_date_time_block"></div>
 <script type="text/javascript">
 
@@ -31,7 +31,7 @@
         var hours = zero_first_format(current_datetime.getHours());
         var minutes = zero_first_format(current_datetime.getMinutes());
         var seconds = zero_first_format(current_datetime.getSeconds());
-        let dayOfTheWeek = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Восвресенье']
+        let dayOfTheWeek = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']
 
         return day+"."+month+"."+year+" "+ dayOfTheWeek[current_datetime.getUTCDay()]+" "+hours+":"+minutes;
     }
@@ -42,6 +42,7 @@
 </script>
 
     <table class="table table-bordered table-striped">
+      <tr><td><b>№</b></td><td><b>Время</b></td><td><b>Урок</b></td><td><b>Домашнее задание</b></td></tr>
       {% for lesson in timetable %}
       <div class=" name-output">
       <tr>

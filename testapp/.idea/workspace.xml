@@ -24,8 +24,6 @@
       <change beforePath="$PROJECT_DIR$/app1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/static/css/app1.css" beforeDir="false" afterPath="$PROJECT_DIR$/app1/static/css/app1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

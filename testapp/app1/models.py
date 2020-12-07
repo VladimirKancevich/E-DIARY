@@ -100,7 +100,7 @@ class OneLesson(models.Model):
     homework = models.CharField(max_length=500, blank=True)
     teacher = models.ForeignKey(Teachers, on_delete=models.PROTECT)
     a_class = models.ForeignKey(Classes, on_delete=models.PROTECT)
-    lesson_status = models.IntegerField(choices=LessonStatus.choices)
+    lesson_status = models.IntegerField(choices=LessonStatus.choices, default=1)
 
     def __str__(self):
         return self.lesson.name
