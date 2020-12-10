@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7646bf-781e-4a81-8c8c-399fdf092fd2" name="Default Changelist" comment="небольшое измнение в названии функции">
+      <change afterPath="$PROJECT_DIR$/app1/static/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/static/css/app1.css" beforeDir="false" afterPath="$PROJECT_DIR$/app1/static/css/app1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/app1/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
