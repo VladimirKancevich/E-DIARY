@@ -4,6 +4,7 @@ from django.db import models
 import datetime
 from app1.models import *
 from django.core.exceptions import ObjectDoesNotExist
+from app1.utils import get_timetable, get_timetable_week, get_date_to_string
 
 
 def main(request):
@@ -15,7 +16,7 @@ def main(request):
     user_class = user.user_class
     date = datetime.date.today()
     return render(request, 'app1/main.html', {'url_name': url_name, 'class': user_class, 'name': user_name,
-                                              'time_list': time_list, 'timetable':get_timetable(date,user_class)})
+                                              'timetable': get_timetable(date, user_class)})
 
 
 def homework(request):
@@ -25,7 +26,12 @@ def homework(request):
     user = LogUser.objects.all()[0].key
     user_name = user.name
     user_class = user.user_class
-    return render(request, 'app1/homework.html', {'url_name': url_name, 'class': user_class, 'name': user_name})
+    date = datetime.date.today()
+    if request.GET.get('date') is not None:
+        date = datetime.datetime.strptime(request.GET.get('date'), '%Y-%m-%d')
+    return render(request, 'app1/homework.html', {'url_name': url_name, 'class': user_class, 'name': user_name,
+                                                  'timetable': get_timetable(date, user_class),
+                                                  'date':get_date_to_string(date)})
 
 
 def timetable(request):
@@ -35,7 +41,9 @@ def timetable(request):
     user = LogUser.objects.all()[0].key
     user_name = user.name
     user_class = user.user_class
-    return render(request, 'app1/timetable.html', {'url_name': url_name, 'class': user_class, 'name': user_name})
+    date = datetime.date.today()
+    return render(request, 'app1/timetable.html', {'url_name': url_name, 'class': user_class, 'name': user_name,
+                                                   'timetable': get_timetable_week(date, user_class)})
 
 
 def progress_table(request):

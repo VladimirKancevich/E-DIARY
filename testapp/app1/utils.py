@@ -25,11 +25,11 @@ def get_timetable_week(date, user_class):
     date_to = date + datetime.timedelta(days=6 - date.weekday())
     result = []
     while date_from <= date_to:
-        result.append({'date': date_from, 'lessons': get_timetable(date, user_class)})
+        result.append({'date': get_date_to_string(date_from), 'lessons': get_timetable(date_from, user_class)})
         date_from += datetime.timedelta(days=1)
     return result
 
 
 def get_date_to_string(date):
     week_days = ['понедельник', 'вторник', 'среду', 'четверг', 'пятница', 'субботу', 'воскресенье']
-    return week_days[datetime.timedelta(days=date)] + ' ' + date.strftime('%d.%m.%Y')
+    return week_days[date.weekday()] + ' ' + date.strftime('%d.%m.%Y')

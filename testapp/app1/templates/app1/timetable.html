@@ -4,13 +4,13 @@
 
 {% block content %}
 <div class="container">
+  {% for day in timetable%}
   <div class="row">
-    <div class="col"><h4>Расписание на сегодня.</h4></div>
-    <div class="font-size-lg col" id="current_date_time_block"></div>
+    <div class="col text-center"><h4>Расписание на {{day.date}}</h4></div>
   </div>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-striped mt-3">
       <tr><th>№</th><th>Время</th><th>Урок</th><th>Домашнее задание</th></tr>
-      {% for lesson in timetable %}
+      {% for lesson in day.lessons %}
       <div class=" name-output">
       <tr>
         <td>{{lesson.number}}</td><td>{{lesson.time}}</td><td>{{lesson.title}}</td><td>{{lesson.homework}}</td>
@@ -18,5 +18,6 @@
       </div>
       {% endfor %}
   </table>
+    {% endfor %}
 </div>
 {% endblock %}

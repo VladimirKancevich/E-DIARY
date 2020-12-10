@@ -21,14 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8a7646bf-781e-4a81-8c8c-399fdf092fd2" name="Default Changelist" comment="небольшое измнение в названии функции">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/static/css/app1.css" beforeDir="false" afterPath="$PROJECT_DIR$/app1/static/css/app1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/app1/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/homework.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/homework.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1/templates/app1/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/templates/app1/timetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/app1/templates/app1/timetable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
