@@ -14,7 +14,6 @@ function rewindDate(direction){
     }
 
     params.date = formatDate(date)
-    console.log('formated date ', params.date)
     const search = Object.keys(params).reduce((acc, val) => `${acc}${val}=${params[val]}&`, '?')
     window.location.search = search.slice(0, -1)
 }

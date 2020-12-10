@@ -31,7 +31,7 @@ def homework(request):
         date = datetime.datetime.strptime(request.GET.get('date'), '%Y-%m-%d')
     return render(request, 'app1/homework.html', {'url_name': url_name, 'class': user_class, 'name': user_name,
                                                   'timetable': get_timetable(date, user_class),
-                                                  'date':get_date_to_string(date)})
+                                                  'date': get_date_to_string(date)})
 
 
 def timetable(request):
